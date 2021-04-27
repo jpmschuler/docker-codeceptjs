@@ -1,0 +1,16 @@
+{
+  "name": "docker-codeceptjs",
+  "version": "1.0.0",
+  "description": "node.js v14 - chromium dependencies",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build . -t docker-codeceptjs:latest",
+    "run": "docker run -it --rm docker-codeceptjs:latest bash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.uni-due.de:softec/docker-codeceptjs.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

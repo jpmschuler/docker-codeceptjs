@@ -1,0 +1,5 @@
+- node.js v14
+- php v7.4
+- composer v1.10.5
+- openssh-client
+- utf-8 support
