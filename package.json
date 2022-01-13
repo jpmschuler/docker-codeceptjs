@@ -1,11 +1,19 @@
 {
   "name": "docker-codeceptjs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "node.js v14 - chromium dependencies",
   "main": "index.js",
   "scripts": {
-    "build": "docker build . --progress=plain -t docker-codeceptjs:dev",
-    "run": "docker run -it --rm docker-codeceptjs:dev bash"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:latest && npm run build:current",
+    "build:latest": "docker build . -t jpmschuler/docker-codeceptjs:latest",
+    "build:current": "docker build . -t jpmschuler/docker-codeceptjs:$(npm pkg get version | tr -d '\"')",
+    "dockerpush": "npm run dockerpush:latest && npm run dockerpush:current",
+    "dockerpush:latest": "docker push jpmschuler/docker-codeceptjs:latest",
+    "dockerpush:current": "docker push jpmschuler/docker-codeceptjs:$(npm pkg get version | tr -d '\"')",
+    "tag:current": "git tag $(npm pkg get version | tr -d '\"')",
+    "git:push": "git push; git push --tags",
+    "release": "npm run build && npm run dockerpush && npm run git:push"
   },
   "repository": {
     "type": "git",
