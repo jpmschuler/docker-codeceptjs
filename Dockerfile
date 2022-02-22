@@ -22,6 +22,7 @@ RUN npm install -g pnpm fixpack
 RUN export NODEVERSION=$(node --version); mkdir -p /home/root/node-headers/; curl -k -o /home/root/node-headers/node-${NODEVERSION}-headers.tar.gz -L https://nodejs.org/download/release/${NODEVERSION}/node-${NODEVERSION}-headers.tar.gz; npm config set tarball /home/root/node-headers/node-${NODEVERSION}-headers.tar.gz
 
 USER dockeruser
+RUN npx playwright install
 WORKDIR /home/dockeruser
 ENV PATH=/home/dockeruser/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
