@@ -1,6 +1,6 @@
 {
   "name": "docker-codeceptjs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "node.js v14 - chromium dependencies",
   "main": "index.js",
   "scripts": {
